@@ -1,0 +1,5 @@
+torch == 2.3.0
+librosa == 0.10.1
+numpy == 1.19.2
+soundfile == 0.12.1
+sounddevice == 0.4.6
