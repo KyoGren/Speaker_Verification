@@ -8,13 +8,6 @@ The system extracts unique features from a speaker's voice sample and compares t
 
 The speaker verification system can be used in various applications, including security systems, customer service, and personal voice assistants. It aims to provide a reliable and efficient way to verify a speaker's identity using just their voice.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Installation
 1. Clone the repository:
 
