@@ -2,9 +2,9 @@
 
 ## Description
 
-verification system with Python programming language. It uses Deep Learning and Digital Signal Processing techniques to verify the identity of a speaker. 
+This project is my final project at university, and it aims to build a speaker verification system with Python programming language. It uses Deep Learning and Digital Signal Processing techniques to verify the identity of a speaker. 
 
-The system extracts unique features from a speaker's voice sample and compares them with previously stored features. There are two methods used to do this: the first one is called Text-Dependent Speaker Verification, and the second is called Text-Independent Speaker Verification.
+The system extracts unique features from a speaker's voice sample and compares them with previously stored features. Two methods are used to do this: the first is called Text-Dependent Speaker Verification, and the second is called Text-Independent Speaker Verification.
 
 The speaker verification system can be used in various applications, including security systems, customer service, and personal voice assistants. It aims to provide a reliable and efficient way to verify a speaker's identity using just their voice.
 
