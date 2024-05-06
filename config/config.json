@@ -1,0 +1,114 @@
+{
+  "task": "tisv",
+  "training": false,
+  "data": {
+    "TD_SV_data":{
+      "unprocessed_dir": "./datasets/hey_android",
+      "unprocessed_data": "./datasets/hey_android/*/*.wav",
+
+      "train_path_processed": "./datasets/processed/tdsv/train",
+      "test_path_processed": "./datasets/processed/tdsv/test",
+
+      "data_processed": true,
+      "sr": 16000,
+      "nfft": 512,
+      "window": 0.025,
+      "hop": 0.01,
+      "nmels": 40,
+      "frame": 80,
+      "duration": 1
+    },
+    "TI_SV_data": {
+      "unprocessed_dir": "./datasets/TIMIT",
+      "unprocessed_data": "./datasets/TIMIT/data/*/*/*/*.wav",
+
+      "train_path_processed": "./datasets/processed/tisv/train",
+      "test_path_processed": "./datasets/processed/tisv/test",
+
+      "data_processed": true,
+      "sr": 16000,
+      "nfft": 512,
+      "window": 0.025,
+      "hop": 0.01,
+      "nmels": 40,
+      "frame_low": 160,
+      "frame": 180,
+      "duration": 2.05
+    }
+  },
+  "model": {
+    "TD_SV_model": {
+      "hidden": 128,
+      "num_layer": 3,
+      "proj": 64,
+      "final_model_path": "./checkpoint/tdsv/final_model.model",
+      "optim_model_path": "./checkpoint/tdsv/optim_model.model",
+      "loss": "contrast"
+    },
+    "TI_SV_model": {
+      "hidden": 768,
+      "num_layer": 3,
+      "proj": 256,
+      "final_model_path": "./checkpoint/tisv/final_model.model",
+      "optim_model_path": "./checkpoint/tisv/optim_model.model",
+      "loss": "softmax"
+    }
+  },
+  "train": {
+    "TD_SV_train": {
+      "N": 5,
+      "M": 10,
+      "num_workers": 0,
+      "lr": 0.01,
+      "epochs": 2000,
+      "log_intervals": 3,
+      "log_file": "./log/loss/tdsv/train.log",
+      "loss_log_file": "./log/loss/tdsv/loss.loss",
+      "checkpoint_interval": 200,
+      "checkpoint_dir": "./checkpoint/tdsv/",
+      "final_model_path": "./checkpoint/tdsv/final_model.model",
+      "optim_model_path": "./checkpoint/tdsv/optim_model.model",
+      "restore": false
+    },
+    "TI_SV_train": {
+      "N": 7,
+      "M": 10,
+      "num_workers": 0,
+      "lr": 0.01,
+      "epochs": 100,
+      "log_intervals": 20,
+      "log_file": "./log/loss/tisv/train.log",
+      "loss_log_file": "./log/loss/tisv/loss.loss",
+      "checkpoint_interval": 200,
+      "checkpoint_dir": "./checkpoint/tisv/",
+      "final_model_path": "./checkpoint/tisv/final_model.model",
+      "optim_model_path": "./checkpoint/tisv/optim_model.model",
+      "restore": false
+    }
+  },
+  "test": {
+    "TD_SV_test": {
+      "N": 2,
+      "M": 10,
+      "num_workers": 8,
+      "epochs": 10,
+      "log_intervals": 5,
+      "final_model_path": "./checkpoint/tdsv/final_model.model",
+      "optim_model_path": "./checkpoint/tdsv/optim_model.model",
+      "log_file": "./log/EER/tdsv/test.log",
+      "EER_log_file": "./log/EER/tdsv/EER.eer",
+      "sr":16000
+    },
+    "TI_SV_test": {
+      "N": 4,
+      "M": 6,
+      "num_workers": 8,
+      "epochs": 10,
+      "log_intervals": 30,
+      "final_model_path": "./checkpoint/tisv/final_model.model",
+      "optim_model_path": "./checkpoint/tisv/optim_model.model",
+      "log_file": "./log/EER/tisv/test.log",
+      "EER_log_file": "./log/EER/tisv/EER.eer"
+    }
+  }
+}
